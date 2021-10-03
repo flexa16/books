@@ -1,0 +1,61 @@
+<meta charset="utf-8" xmlns:sec="http://www.w3.org/1999/xhtml">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<link rel="shortcut icon" type="image/png"
+      href="https://img2.freepng.ru/20180901/vvr/kisspng-vector-graphics-clip-art-computer-icons-illustrati--5b8a2002079109.956262361535778818031.jpg"/>
+
+
+<nav class="navbar navbar-dark bg-dark sticky-top">
+
+    <ul class="nav">
+
+        <li class="nav-item">
+            <a class="nav-link" href="addBook"  sec:authorize="isAuthenticated()">
+                <h5>Add book</h5>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="delBook"  sec:authorize="isAuthenticated()">
+                <h5>Remove book</h5>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="updateBook"  sec:authorize="isAuthenticated()">
+                <h5>Update book</h5>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="books"  sec:authorize="isAuthenticated()">
+                <h5>Book catalog</h5>
+            </a>
+        </li>
+
+
+        <span class="pull-right">
+        <li class="nav-item">
+        <a class="nav-link active" href="register" sec:authorize="!isAuthenticated()">
+            <h5>Register</h5>
+        </a>
+        </li>
+    </span>
+        <span class="pull-left">
+        <li class="nav-item">
+        <a class="nav-link active" href="login" sec:authorize="!isAuthenticated()">
+            <h5>LogIn</h5>
+        </a>
+        </li>
+    </span>
+
+        <span class="pull-left"  sec:authorize="isAuthenticated()">
+        <li class="nav-item">
+        <a class="nav-link active" href="logout">
+            <h5>LogOut</h5>
+        </a>
+        </li>
+    </span>
+    </ul>
+</nav>
+<body>

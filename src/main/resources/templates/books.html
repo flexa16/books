@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <title>Books to sell</title>
+<div th:insert ="header"/>
+
+<div class="tab-content " id="myTabContent">
+    <div class="tab-pane fade show active " id="bookList" role="tabpanel" aria-labelledby="bookList-tab">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">title</th>
+                <th scope="col">author</th>
+                <th scope="col">pages</th>
+                <th scope="col">price</th>
+                <th scope="col">count</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="dis,state : ${bookLists}">
+                <td th:utext="${bookLists.get(state.index).getId()}"></td>
+                <td th:utext="${bookLists.get(state.index).getTitle()}"></td>
+                <td th:utext="${bookLists.get(state.index).getAuthor()}"></td>
+                <td th:utext="${bookLists.get(state.index).getPages()}"></td>
+                <td th:utext="${bookLists.get(state.index).getPrice()}"></td>
+                <td th:utext="${bookLists.get(state.index).getCount()}"></td>
+                <td>
+                    <form action="#" th:action="@{'/buyBook/{id}'(id=${bookLists.get(state.index).getId()})}" th:method="buyBook" >
+                        <input type="hidden" name="_method" value="delete" />
+                        <button type="submit" id="submitButtonBuy">Buy</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div th:insert ="footer"/>
+
+</html>

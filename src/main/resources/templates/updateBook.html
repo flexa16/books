@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <title>Add book</title>
+    <div th:insert ="header"/>
+
+    <form action="POST" th:action="@{/updateBook}" th:object="${dto}" method="post">
+        <p>id: <input type="text" th:field="*{id}" /></p>
+        <p>title: <input type="text" th:field="*{title}" /></p>
+        <p>author: <input type="text" th:field="*{author}" /></p>
+        <p>pages: <input type="text" th:field="*{pages}" /></p>
+        <p>price: <input type="text" th:field="*{price}" /></p>
+        <p>count: <input type="text" th:field="*{count}" /></p>
+
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+
+    <div th:insert ="footer"/>
+
+</html>
